@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     printf("Result of unlocking the file: %d", unlock_result);
     // And then close the file:
     fclose(my_file);
-    // Lastly, let's delete the file: (you can comment this out to see the results of read/update)
-    //remove(argv[1]); 
+    // Lastly, uncomment to delete the file, otherwise keep it like this so that you can open the file and see what you added:
+    // remove(argv[1]); 
     return 0;
 }
