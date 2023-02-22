@@ -3,6 +3,24 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+int execute_A() {
+    int value = execlp("/bin/ls", "ls", NULL);
+    if (value != -1) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+int execute_B() {
+    int value = execlp("/bin/ls", "ls", NULL);
+    if (value != -1) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
 int main(int argc, char** argv) {
     pid_t pid;
     int child_result;
@@ -30,22 +48,4 @@ int main(int argc, char** argv) {
         printf("Error occurred in parent process: %d.\n", parent_result);
     }
     return -1;
-}
-
-int execute_A() {
-    int value = execlp("/bin/ls", "ls", NULL);
-    if (value != -1) {
-        return 0;
-    } else {
-        return -1;
-    }
-}
-
-int execute_B() {
-    int value = execlp("/bin/ls", "ls", NULL);
-    if (value != -1) {
-        return 0;
-    } else {
-        return -1;
-    }
 }
