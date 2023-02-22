@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
     }
 
     if (child_result == 0 && parent_result == 0) {
-        printf("Child and parent processes completed successfully.");
+        printf("Child and parent processes completed successfully.\n");
         return 0;
     }
     if (child_result != 0) {
