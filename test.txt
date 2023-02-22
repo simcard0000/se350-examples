@@ -1,0 +1,1 @@
+Hey there! This is a test text file. You can use this file with some of the C programs provided.
