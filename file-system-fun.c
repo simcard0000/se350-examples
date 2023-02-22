@@ -3,6 +3,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
+#include <sys/file.h> // needed for flock function
+
+#define MAX_LEN 1024
 
 int main(int argc, char** argv) {
     if (argc != 2) {
@@ -17,21 +20,21 @@ int main(int argc, char** argv) {
     }
     // Next, let's place a file lock on the file we're trying to read and update to:
     int file_description = fileno(my_file);
-    int lock_result = flock(file_description, LOCK_EX);
+    int lock_result = flock(file_description, LOCK_EX); // lockf or flock is library dependent
     printf("Result of locking the file: %d", lock_result);
     // Then, read the file by each string token (skipping whitespace, not using getline): 
     char token[MAX_LEN + 1];
-    while (fscanf(my_file, " %s", %token[0]) == 1) { // the space in front of %s is important
+    while (fscanf(my_file, " %s", &token[0]) == 1) { // the space in front of %s is important
         printf("%s\n", token);
     }
     // The pointer should be at the end of the file after reading, so let's add stuff now:
     fprintf(my_file, "\nYAY IT WORKED\n");
-    // We then want to close the file.
-    fclose(my_file);
-    // And remove the lock we put on the file:
+    // Let's remove the lock we put on the file:
     int unlock_result = flock(file_description, LOCK_UN);
     printf("Result of unlocking the file: %d", unlock_result);
+    // And then close the file:
+    fclose(my_file);
     // Lastly, let's delete the file: (you can comment this out to see the results of read/update)
-    remove(argv[1]); 
+    //remove(argv[1]); 
     return 0;
 }
