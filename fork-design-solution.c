@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
     return -1;
 }
 
-int executeA() {
+int execute_A() {
     int value = execlp("/bin/ls", "ls", NULL);
     if (value != -1) {
         return 0;
@@ -41,7 +41,7 @@ int executeA() {
     }
 }
 
-int executeB() {
+int execute_B() {
     int value = execlp("/bin/ls", "ls", NULL);
     if (value != -1) {
         return 0;
