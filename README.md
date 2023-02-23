@@ -8,4 +8,4 @@ Unless otherwise stated in code comments, these code examples are or based upon 
 * Lecture 3 - The File System personal example (**[file-system-fun.c](https://github.com/simcard0000/se350-examples/blob/main/file-system-fun.c)**)
 * Lecture 5 - Processes in UNIX examples (**[basic-fork.c](https://github.com/simcard0000/se350-examples/blob/main/basic-fork.c)** and **[fork-design-solution.c](https://github.com/simcard0000/se350-examples/blob/main/fork-design-solution.c)**)
 * Lecture 6 - Inter-Process Communication (**[parent-to-child-message.c](https://github.com/simcard0000/se350-examples/blob/main/parent-to-child-message.c)** and **[signals.c](https://github.com/simcard0000/se350-examples/blob/main/signals.c)**)
-* Lecture 7 - Sockets in-class exercise (**[sockets.c](https://github.com/simcard0000/se350-examples/blob/main/sockets.c)**)
+* Lecture 7 - Sockets in-class exercise (**[sockets.c](https://github.com/simcard0000/se350-examples/blob/main/sockets.c)**) and snippet (**(sockets-server.c)[https://github.com/simcard0000/se350-examples/blob/main/sockets-server.c]**)
