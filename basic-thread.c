@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <pthread.h>
 
+// When building, you must link with the external pthread library: for example, 'gcc curl.c -lpthread'
+
 void* run(void* argument) {
     char* a = (char*) argument;
     printf("Provided argument: %s.\n", a);
@@ -15,7 +17,7 @@ int main(int argc, char** argv) {
         printf("Invalid arguments.\n");
         return -1;
     }
-    pthread_t = t;
+    pthread_t t;
     void* vr;
 
     pthread_create(&t, NULL, run, argv[1]);
