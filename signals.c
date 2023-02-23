@@ -9,6 +9,8 @@
 #include <unistd.h>     /* standard unix functions, like getpid()       */
 #include <sys/types.h>  /* various type definitions, like pid_t         */
 #include <signal.h>     /* signal name macros, and the kill() prototype */
+#include <stdio.h>
+#include <stdlib.h>
 
 /* first, define the Ctrl-C counter, initialize it with zero. */
 int ctrl_c_count = 0;
@@ -34,7 +36,7 @@ void catch_int(int sig_num)
 	/* prompt the user to tell us if to really exit or not */
 	printf("\nRealy Exit? [y/N]: ");
 	fflush(stdout);
-	gets(answer);
+	fgets(answer, 30, stdin);
 	if (answer[0] == 'y' || answer[0] == 'Y') {
 	    printf("\nExiting...\n");
 	    fflush(stdout);
@@ -47,7 +49,7 @@ void catch_int(int sig_num)
 	    ctrl_c_count = 0;
 	}
     }
-    /* restore the old signal mask */{{/COMMENT_FONT}*/
+    /* restore the old signal mask */
     sigprocmask(SIG_SETMASK, &old_set, NULL);
 }
 
