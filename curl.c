@@ -1,13 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 #include <curl/curl.h>
+#include <memory.h>
+#include <stdlib.h>
+
+// When building, you must link with the external CURL library: for example, 'gcc curl.c -lcurl'
 
 const char data[] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 struct data {
     char *readptr;
     size_t size_left;
-}
+};
 
 size_t read_callback(void *dest, size_t size, size_t nmemb, void *userp) {
     struct data *d = (struct data *) userp;
