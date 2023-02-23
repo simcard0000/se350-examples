@@ -6,4 +6,5 @@ Unless otherwise stated in code comments, these code examples are or based upon 
 
 * Lecture 2 - Review of Computer Architecture: Reading from Disk example (**[system-call-read-from-disk.c](https://github.com/simcard0000/se350-examples/blob/main/system-call-read-from-disk.c)**)
 * Lecture 3 - The File System personal example (**[file-system-fun.c](https://github.com/simcard0000/se350-examples/blob/main/file-system-fun.c)**)
+* Lecture 5 - Processes in UNIX examples (**[basic-fork.c](https://github.com/simcard0000/se350-examples/blob/main/basic-fork.c)** and **[fork-design-solution.c](https://github.com/simcard0000/se350-examples/blob/main/fork-design-solution.c)**)
 * Lecture 7 - Sockets in-class exercise (**[sockets.c](https://github.com/simcard0000/se350-examples/blob/main/sockets.c)**)
