@@ -72,3 +72,16 @@ void catch_suspend(int sig_num)
     /* restore the old signal mask */
     sigprocmask(SIG_SETMASK, &old_set, NULL);
 }
+
+int main(int argc, char* argv[])
+{
+    /* set the Ctrl-C and Ctrl-Z signal handlers */
+    signal(SIGINT, catch_int);
+    signal(SIGTSTP, catch_suspend);
+
+    /* enter an infinite loop of waiting for signals */
+    for ( ;; )
+	    pause();
+
+    return 0;
+}
