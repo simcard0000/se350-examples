@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 
 int main(int argc, char** argv) {
-    int shm_id = shmget(IPC_PRIVATE, IPC_CREAT | 0666);
+    int shm_id = shmget(IPC_PRIVATE, 32, IPC_CREAT | 0666);
 
     int pid = fork();
     if (pid < 0) {
