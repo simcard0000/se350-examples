@@ -11,7 +11,7 @@ int counter = 0;
 int* buffer;
 
 int produce() {
-    counter++;
+    ++counter;
     return counter;
 }
 
