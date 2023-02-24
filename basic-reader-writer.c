@@ -28,14 +28,14 @@ void read_data(FILE* f) {
 
 void* writer(void* arg) {
     pthread_rwlock_wrlock(&rwlock);
-    write_data((FILE*) f);
+    write_data((FILE*) arg);
     pthread_rwlock_unlock(&rwlock);
     pthread_exit(NULL);
 }
 
 void* reader(void* arg) {
     pthread_rwlock_rdlock(&rwlock);
-    read_data((FILE*) f);
+    read_data((FILE*) arg);
     pthread_rwlock_unlock(&rwlock);
     pthread_exit(NULL);
 }
