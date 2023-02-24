@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <pthread.h>
 
+// When building, you must link with the external pthread library: for example, 'gcc linked-list-integrity.c -lpthread'
+
 typedef struct single_node {
     void *element;
     struct single_node *next;
@@ -57,35 +59,35 @@ single_list_t data_list;
 
 // The below code is a personal example:
 
-void task1() {
+void* task1() {
     int value1 = 0;
     int value2 = 5;
     int value3 = 7;
-    push_front(data_list, &value1);
-    push_front(data_list, &value2);
-    push_front(data_list, &value3);
+    push_front(*data_list, &value1);
+    push_front(*data_list, &value2);
+    push_front(*data_list, &value3);
 }
 
-void task2() {
+void* task2() {
     int value4 = 9;
     int value5 = 34;
     int value6 = 222;
-    pop_front(data_list);
-    push_front(data_list, &value4);
-    push_front(data_list, &value5);
-    pop_front(data_list);
-    push_front(data_list, &value6);
+    pop_front(*data_list);
+    push_front(*data_list, &value4);
+    push_front(*data_list, &value5);
+    pop_front(*data_list);
+    push_front(*data_list, &value6);
 }
 
-void task3() {
-    pop_front(data_list);
-    pop_front(data_list);
-    pop_front(data_list);
+void* task3() {
+    pop_front(*data_list);
+    pop_front(*data_list);
+    pop_front(*data_list);
 }
 
 int main(int argc, char** argv) {
     // Initializing the shared linked list:
-    single_list_init(data_list);
+    single_list_init(*data_list);
 
     // Creating three threads that will run different tasks
     pthread_t tid[3];
@@ -97,7 +99,7 @@ int main(int argc, char** argv) {
     pthread_join(tid[2], NULL);
 
     //End result of the shared linked list:
-    single_node_t *it = list->head;
+    single_node_t *it = data_list->head;
     while (it != null) {
         printf("element: %d", *(it->element));
         it = it->next;
