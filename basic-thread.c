@@ -27,3 +27,11 @@ int main(int argc, char** argv) {
     free(vr);
     pthread_exit(0);
 }
+
+/*
+    In this example, both threads are sharing the global variable "sum".
+    We have some form of co-ordination here because the parent thread will
+    join the newly-spawned thread (i.e wait until it is finished) before
+    it tries to print out the value. If it did not join the spawned thread,
+    the parent thread woudl print out the sum early.
+*/
