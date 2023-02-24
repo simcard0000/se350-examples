@@ -7,6 +7,7 @@
 #include <pthread.h>
 
 // When building, you must link with the external pthread library: for example, 'gcc linked-list-integrity.c -lpthread'
+// Results are random for this program because which thread runs is based on OS scheduling.
 
 typedef struct single_node {
     int element;
