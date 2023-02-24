@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
 
     //End result of the shared linked list:
     single_node_t *it = data_list.head;
-    while (it != null) {
+    while (it != NULL) {
         printf("element: %d", *(int*)(it->element));
         it = it->next;
     }
