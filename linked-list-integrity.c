@@ -45,6 +45,8 @@ bool push_front(single_list_t *list, int obj) {
     return true;
 }
 
+// The below code is personal:
+
 bool pop_front(single_list_t *list) {
     if (list->size == 0) {
         return false;
@@ -62,8 +64,6 @@ bool pop_front(single_list_t *list) {
 }
 
 single_list_t data_list;
-
-// The below code is a personal example:
 
 void* task1(void *param) {
     push_front(&data_list, 5);
@@ -94,9 +94,14 @@ int main(int argc, char** argv) {
 
     //End result of the shared linked list:
     single_node_t *it = data_list.head;
+    single_node_t *old = NULL;
     while (it != NULL) {
         printf("element: %d\n", it->element);
+        old = it;
         it = it->next;
+        free(old);
     }
+    sem_destroy(&(data_list.sem));
+
     pthread_exit(0);
 }
