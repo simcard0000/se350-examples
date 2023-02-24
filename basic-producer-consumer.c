@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <semaphore.h>
 
-#define BUFFER_SIZE 20;
+#define BUFFER_SIZE 20
 sem_t spaces;
 sem_t items;
 int counter = 0;
