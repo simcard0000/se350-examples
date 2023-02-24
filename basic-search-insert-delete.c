@@ -6,10 +6,10 @@
 #include <memory.h>
 #include <pthread.h>
 
-// When building, you must link with the external pthread library: for example, 'gcc linked-list-integrity.c -lpthread'
+// When building, you must link with the external pthread library: for example, 'gcc basic-search-insert-delete.c -lpthread'
 // The linked list implementation is based on the code in linked-list-integrity.c
 
-// This code casts from void* to int in an unsafe way in that the values of sizeof(int) and sizeof(void*) might be different.
+// Watch out for casting void* to int in an unsafe way: in that the values of sizeof(int) and sizeof(void*) might be different.
 // You could suffer loss if the value that void* holds is beyond the maximum value for an int.
 
 typedef struct single_node {
