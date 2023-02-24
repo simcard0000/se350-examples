@@ -9,7 +9,7 @@
 // When building, you must link with the external pthread library: for example, 'gcc linked-list-integrity.c -lpthread'
 
 typedef struct single_node {
-    void *element;
+    int element;
     struct single_node *next;
 } single_node_t;
 
@@ -27,7 +27,7 @@ void single_list_init(single_list_t *list) {
     sem_init(&(list->sem), 0, 1);
 }
 
-bool push_front(single_list_t *list, void *obj) {
+bool push_front(single_list_t *list, int obj) {
     single_node_t *tmp = malloc(sizeof(single_node_t));
     if (tmp == NULL) {
         return false;
@@ -35,6 +35,7 @@ bool push_front(single_list_t *list, void *obj) {
     tmp->element = obj;
     sem_wait(&(list->sem));
     tmp->next = list->head;
+    list->head = tmp;
     if(list->size == 0) {
         list->tail = tmp;
     }
@@ -47,10 +48,9 @@ bool pop_front(single_list_t *list) {
     if (list->size == 0) {
         return false;
     }
-    single_node_t *newHead = list->head->next;
-    single_node_t *oldHead = list->head;
     sem_wait(&(list->sem));
-    list->head = newHead;
+    single_node_t *oldHead = list->head;
+    list->head = list->head->next;
     free(oldHead);
     --(list->size);
     if(list->size == 0) {
@@ -65,29 +65,19 @@ single_list_t data_list;
 // The below code is a personal example:
 
 void* task1(void *param) {
-    int value1 = 0;
-    int value2 = 5;
-    int value3 = 7;
-    push_front(&data_list, &value1);
-    push_front(&data_list, &value2);
-    push_front(&data_list, &value3);
+    push_front(&data_list, 5);
+    push_front(&data_list, 7);
+    push_front(&data_list, 9);
+    pthread_exit(0);
 }
 
 void* task2(void *param) {
-    int value4 = 9;
-    int value5 = 34;
-    int value6 = 222;
     pop_front(&data_list);
-    push_front(&data_list, &value4);
-    push_front(&data_list, &value5);
+    push_front(&data_list, 11);
+    push_front(&data_list, 13);
+    push_front(&data_list, 15);
     pop_front(&data_list);
-    push_front(&data_list, &value6);
-}
-
-void* task3(void *param) {
-    pop_front(&data_list);
-    pop_front(&data_list);
-    pop_front(&data_list);
+    pthread_exit(0);
 }
 
 int main(int argc, char** argv) {
@@ -95,18 +85,16 @@ int main(int argc, char** argv) {
     single_list_init(&data_list);
 
     // Creating three threads that will run different tasks
-    pthread_t tid[3];
+    pthread_t tid[2];
     pthread_create(&tid[0], NULL, task1, NULL);
     pthread_create(&tid[1], NULL, task2, NULL);
-    pthread_create(&tid[2], NULL, task3, NULL);
     pthread_join(tid[0], NULL);
     pthread_join(tid[1], NULL);
-    pthread_join(tid[2], NULL);
 
     //End result of the shared linked list:
     single_node_t *it = data_list.head;
     while (it != NULL) {
-        printf("element: %d", *(int*)(it->element));
+        printf("element: %d\n", it->element);
         it = it->next;
     }
     pthread_exit(0);
