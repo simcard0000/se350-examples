@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <pthread.h>
 
-// When building, you must link with the external pthread library: for example, 'gcc curl.c -lpthread'
+// When building, you must link with the external pthread library: for example, 'gcc basic-thread.c -lpthread'
 
 void* run(void* argument) {
     char* a = (char*) argument;
