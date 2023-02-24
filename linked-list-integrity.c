@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <semaphore.h>
+#include <stdbool.h>
 #include <memory.h>
 #include <pthread.h>
 
@@ -102,9 +103,9 @@ int main(int argc, char** argv) {
     pthread_join(tid[2], NULL);
 
     //End result of the shared linked list:
-    single_node_t *it = data_list->head;
+    single_node_t *it = data_list.head;
     while (it != null) {
-        printf("element: %d", *(it->element));
+        printf("element: %d", *(int*)(it->element));
         it = it->next;
     }
     pthread_exit(0);
