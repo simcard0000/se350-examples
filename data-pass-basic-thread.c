@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <pthread.h>
 
+// When building, you must link with the external pthread library: for example, 'gcc data-pass-basic-thread.c -lpthread'
+
 int sum;
 
 void *runner(void *param) {
