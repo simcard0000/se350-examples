@@ -1,5 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <semaphore.h>
+#include <memory.h>
 #include <pthread.h>
 
 // When building, you must link with the external pthread library: for example, 'gcc linked-list-integrity.c -lpthread'
@@ -63,31 +66,31 @@ void* task1() {
     int value1 = 0;
     int value2 = 5;
     int value3 = 7;
-    push_front(*data_list, &value1);
-    push_front(*data_list, &value2);
-    push_front(*data_list, &value3);
+    push_front(&data_list, &value1);
+    push_front(&data_list, &value2);
+    push_front(&data_list, &value3);
 }
 
 void* task2() {
     int value4 = 9;
     int value5 = 34;
     int value6 = 222;
-    pop_front(*data_list);
-    push_front(*data_list, &value4);
-    push_front(*data_list, &value5);
-    pop_front(*data_list);
-    push_front(*data_list, &value6);
+    pop_front(&data_list);
+    push_front(&data_list, &value4);
+    push_front(&data_list, &value5);
+    pop_front(&data_list);
+    push_front(&data_list, &value6);
 }
 
 void* task3() {
-    pop_front(*data_list);
-    pop_front(*data_list);
-    pop_front(*data_list);
+    pop_front(&data_list);
+    pop_front(&data_list);
+    pop_front(&data_list);
 }
 
 int main(int argc, char** argv) {
     // Initializing the shared linked list:
-    single_list_init(*data_list);
+    single_list_init(&data_list);
 
     // Creating three threads that will run different tasks
     pthread_t tid[3];
