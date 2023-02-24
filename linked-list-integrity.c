@@ -48,9 +48,10 @@ bool pop_front(single_list_t *list) {
         return false;
     }
     single_node_t *newHead = list->head->next;
+    single_node_t *oldHead = list->head;
     sem_wait(&(list->sem));
-    free(list->head);
     list->head = newHead;
+    free(oldHead);
     --(list->size);
     if(list->size == 0) {
         list->tail = NULL;
