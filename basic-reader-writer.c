@@ -4,6 +4,9 @@
 #include <unistd.h>
 #include <semaphore.h>
 
+// When building, you must link with the external pthread library: for example, 'gcc basic-reader-writer.c -lpthread'
+// What the threads do is based on the contents of file-system.fun.c
+
 #define MAX_LEN 1024
 pthread_rwlock_t rwlock;
 
