@@ -63,7 +63,7 @@ single_list_t data_list;
 
 // The below code is a personal example:
 
-void* task1() {
+void* task1(void *) {
     int value1 = 0;
     int value2 = 5;
     int value3 = 7;
@@ -72,7 +72,7 @@ void* task1() {
     push_front(&data_list, &value3);
 }
 
-void* task2() {
+void* task2(void *) {
     int value4 = 9;
     int value5 = 34;
     int value6 = 222;
@@ -83,7 +83,7 @@ void* task2() {
     push_front(&data_list, &value6);
 }
 
-void* task3() {
+void* task3(void *) {
     pop_front(&data_list);
     pop_front(&data_list);
     pop_front(&data_list);
