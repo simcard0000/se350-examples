@@ -29,6 +29,8 @@ void single_list_init(single_list_t *list) {
     list->size = 0;
 }
 
+single_list_t data_list;
+
 bool push_front(single_list_t *list, int obj) {
     single_node_t *tmp = malloc(sizeof(single_node_t));
     if (tmp == NULL) {
@@ -70,8 +72,6 @@ bool find(int value) {
     }
     return found;
 }
-
-single_list_t data_list;
 
 // SEARCH-INSERT-DELETE functions:
 
