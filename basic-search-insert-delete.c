@@ -108,7 +108,7 @@ void* searcher(void* target) {
         sem_wait(&no_searchers);
     }
     pthread_mutex_unlock(&searcher_mutex);
-    bool result = find((int) target);
+    bool result = find(*target);
     if (result) {
         printf("Found what you're looking for :)\n");
     } else {
@@ -140,7 +140,7 @@ void* inserter(void* value) {
     }
     pthread_mutex_unlock(&inserter_mutex);
     pthread_mutex_lock(&perform_insert_mutex);
-    push_front(&data_list, (int) value);
+    push_front(&data_list, *value);
     pthread_mutex_unlock(&perform_insert_mutex);
     pthread_mutex_lock(&inserter_mutex);
     inserters--;
