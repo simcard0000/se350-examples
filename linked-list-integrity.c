@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
     // Initializing the shared linked list:
     single_list_init(&data_list);
 
-    // Creating three threads that will run different tasks
+    // Creating two threads that will run different tasks
     pthread_t tid[2];
     pthread_create(&tid[0], NULL, task1, NULL);
     pthread_create(&tid[1], NULL, task2, NULL);
