@@ -158,12 +158,14 @@ int main(int argc, char** argv) {
 
     // Initializing four threads:
     pthread_t tid[4];
-    int value1 = 5;
-    int value2 = 6;
+    int* value1 = malloc(sizeof(int);
+    *value1 = 16;
+    int* value2 = malloc(sizeof(int);
+    *value2 = 24;
     pthread_create(&tid[0], NULL, inserter, &value1);
     pthread_create(&tid[1], NULL, inserter, &value2);
     pthread_create(&tid[2], NULL, deleter, NULL);
-    pthread_create(&tid[3], NULL, searcher, &value2);
+    pthread_create(&tid[3], NULL, searcher, &value1);
     pthread_join(tid[0], NULL);
     pthread_join(tid[1], NULL);
     pthread_join(tid[2], NULL);
