@@ -26,16 +26,16 @@ void read_data(FILE* f) {
     }
 }
 
-void* writer(FILE* f) {
+void* writer(void* arg) {
     pthread_rwlock_wrlock(&rwlock);
-    write_data(f);
+    write_data((FILE*) f);
     pthread_rwlock_unlock(&rwlock);
     pthread_exit(NULL);
 }
 
-void* reader(FILE* f) {
+void* reader(void* arg) {
     pthread_rwlock_rdlock(&rwlock);
-    read_data(f);
+    read_data((FILE*) f);
     pthread_rwlock_unlock(&rwlock);
     pthread_exit(NULL);
 }
