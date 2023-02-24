@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <semaphore.h>
 
+// When building, you must link with the external pthread library: for example, 'gcc basic-producer-consumer.c -lpthread'
+
 #define BUFFER_SIZE 20
 sem_t spaces;
 sem_t items;
