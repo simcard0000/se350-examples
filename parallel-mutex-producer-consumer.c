@@ -74,7 +74,7 @@ int main(int argc, char** argv) {
         *id = i - 10;
         pthread_create(&threads[i], NULL, consumer, id);
     }
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 20; i++) {
         pthread_join(threads[i], NULL);
     }
     sem_destroy(&spaces);
