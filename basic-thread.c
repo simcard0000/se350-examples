@@ -26,5 +26,4 @@ int main(int argc, char** argv) {
     printf("The other thread returned the value: %d.\n", *r);
     free(vr);
     pthread_exit(0);
-    return 0;
 }
