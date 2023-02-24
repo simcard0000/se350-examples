@@ -1,5 +1,6 @@
+![coding can sometimes feel like this](https://media.giphy.com/media/4no7ul3pa571e/giphy.gif)
 # se350-examples
-🔩 Example and activity code from UWaterloo SE350: Operating Systems
+🔩 Example and activity code from UWaterloo SE350: Operating Systems!
 
 ### Contents
 Unless otherwise stated in code comments, these code examples are or based upon the notes and lecture content in [Jeff Zarnett's SE350 repository](https://github.com/jzarnett/se350). SE350: Operating Systems is a Software Engineering course at the University of Waterloo. If there is something in this repository that is incorrect or should be taken down, please let me know!
