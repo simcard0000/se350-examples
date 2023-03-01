@@ -17,3 +17,8 @@ Unless otherwise stated in code comments, these code examples are or based upon 
 * Lecture 13 - Semaphores: example with some personal amendments (**[linked-list-integrity.c](https://github.com/simcard0000/se350-examples/blob/main/linked-list-integrity.c)**)
 * Lecture 15 - The Producer/Consumer Problem: examples (**[basic-producer-consumer.c](https://github.com/simcard0000/se350-examples/blob/main/basic-producer-consumer.c)** and **[parallel-mutex-producer-consumer.c](https://github.com/simcard0000/se350-examples/blob/main/parallel-mutex-producer-consumer.c)**)
 * Lecture 16 - The Readers/Writers Problem: examples that have had personal amendments (**[basic-reader-writer.c](https://github.com/simcard0000/se350-examples/blob/main/basic-reader-writer.c)** and **[basic-search-insert-delete.c](https://github.com/simcard0000/se350-examples/blob/main/basic-search-insert-delete.c)**)
+
+### Other Resources:
+* [A Practical Introduction to Real-Time Systems for Undergraduate Engineering](https://ece.uwaterloo.ca/~dwharder/icsrts/Lecture_materials/A_practical_introduction_to_real-time_systems_for_undergraduate_engineering.pdf)
+* [The Little Book of Semaphores](https://greenteapress.com/wp/semaphores/)
+* [Stanford CS140: Operating Systems Notes](https://www.scs.stanford.edu/20wi-cs140/)
