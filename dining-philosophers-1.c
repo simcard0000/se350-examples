@@ -42,7 +42,7 @@ void eat(int id)
 	int f[2], ration, i; /* forks */
 	f[0] = f[1] = id;
 
-	/* make some (but not all) philosophers leftie.
+	/* make some (but not all) philosophers lefties.
 	   could have been f[!id] = (id + 1) %N; for example */
 	f[id & 1] = (id + 1) % N;
 
