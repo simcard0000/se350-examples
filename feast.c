@@ -3,6 +3,9 @@
 #include <string.h>
 #include <stdbool.h>
 
+// This code is based off of Jeff Zarnett's "SE 350 Exercise: There and Back Again". 
+// If re-sharing this code is not allowed per University of Waterloo guidelines, please let me know.
+
 /* Number of dishes that fit on the table */
 #define TABLE_SPACE 5
 
