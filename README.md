@@ -22,7 +22,7 @@ Unless otherwise stated in code comments, these code examples are or based upon 
 * Lecture 15 - The Producer/Consumer Problem: examples (**[basic-producer-consumer.c](https://github.com/simcard0000/se350-examples/blob/main/basic-producer-consumer.c)** and **[parallel-mutex-producer-consumer.c](https://github.com/simcard0000/se350-examples/blob/main/parallel-mutex-producer-consumer.c)**)
 * Lecture 16 - The Readers/Writers Problem: examples that have had personal amendments (**[basic-reader-writer.c](https://github.com/simcard0000/se350-examples/blob/main/basic-reader-writer.c)** and **[basic-search-insert-delete.c](https://github.com/simcard0000/se350-examples/blob/main/basic-search-insert-delete.c)**)
 * Lecture 17 - Deadlock: external examples that solve the Dining Philosopher's Problem two ways (**[dining-philosophers-1.c](https://github.com/simcard0000/se350-examples/blob/main/dining-philosophers-1.c)** and **[dining-philosophers-2.c](https://github.com/simcard0000/se350-examples/blob/main/dining-philosophers-2.c)**)
-* Lecture 18-Lecture 29 - N/A (except for the in-class exercise on caching: **[feast.c](https://github.com/simcard0000/se350-examples/blob/main/feast.c)**
+* Lecture 18-Lecture 29 - N/A (except for the in-class exercise on caching: **[feast.c](https://github.com/simcard0000/se350-examples/blob/main/feast.c)**)
 
 ### Other Resources:
 * [A Practical Introduction to Real-Time Systems for Undergraduate Engineering](https://ece.uwaterloo.ca/~dwharder/icsrts/Lecture_materials/A_practical_introduction_to_real-time_systems_for_undergraduate_engineering.pdf)
