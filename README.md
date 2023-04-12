@@ -28,3 +28,4 @@ Unless otherwise stated in code comments, these code examples are or based upon 
 * [A Practical Introduction to Real-Time Systems for Undergraduate Engineering](https://ece.uwaterloo.ca/~dwharder/icsrts/Lecture_materials/A_practical_introduction_to_real-time_systems_for_undergraduate_engineering.pdf)
 * [The Little Book of Semaphores](https://greenteapress.com/wp/semaphores/)
 * [Stanford CS140: Operating Systems Notes](https://www.scs.stanford.edu/20wi-cs140/)
+* [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/) - related to CS350
