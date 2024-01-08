@@ -1,5 +1,6 @@
 ![active development](https://img.shields.io/badge/active%20dev-on%20hold-yellow.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/simcard0000/se350-examples.svg)
+
 ![coding can sometimes feel like this](https://media.giphy.com/media/4no7ul3pa571e/giphy.gif)
 # se350-examples
 🔩 Example and activity code from UWaterloo SE350: Operating Systems! Made in Winter 2023.
